@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "283142673413",
+    "project_id": "recipelog-caa9f",
+    "storage_bucket": "recipelog-caa9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283142673413:android:fb8e952ea9926f4c71786c",
+        "android_client_info": {
+          "package_name": "com.example.recipelog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdfdhSuHPAgjZJhukEmDyQ0K0k1JZj2mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283142673413:android:d6c495e858b830f871786c",
+        "android_client_info": {
+          "package_name": "com.recipelog.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdfdhSuHPAgjZJhukEmDyQ0K0k1JZj2mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
