@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:recipelog/precentation/screens/create_edit_screen/bloc/local_variable.dart';
 import 'package:recipelog/precentation/screens/widgets/text_field.dart';
 import 'package:recipelog/precentation/style_manager.dart';
 
-Widget fillInCreate() {
+Widget fillInCreate({required TextEditingController recipeTitleController, String lable = 'Category'}) {
   List<String> categories = [
     'Appetizer',
     'Main Course',
@@ -14,22 +15,20 @@ Widget fillInCreate() {
   ];
   return Column(
     children: [
-      textField(hintText: 'Recipe Name'),
+      textField(hintText: 'Recipe Name',controller: recipeTitleController),
       const SizedBox(
         height: 10,
       ),
-      Expanded(child: textField(expands: true, hintText: 'Ingredients (seperate each by , coma)')),
       const SizedBox(
         height: 10,
       ),
-      Expanded(child: textField(expands: true, hintText: 'Instructions (seperate each by , coma)')),
       const SizedBox(
         height: 10,
       ),
       DropdownButtonFormField(
         iconEnabledColor: AppColor.acsentColor,
         decoration: InputDecoration(
-          label: Text('Category',style: TextStyles.primaryBold,),
+          label: Text(lable,style: TextStyles.primaryBold,),
           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColor.acsentColor)),
           enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColor.acsentColor)),
         ),
@@ -40,7 +39,9 @@ Widget fillInCreate() {
               value: category,
               child: Text(category));
           }).toList(),
-          onChanged: (value) {})
+          onChanged: (value) {
+            selectedCategory = value!;
+          })
     ],
   );
 }

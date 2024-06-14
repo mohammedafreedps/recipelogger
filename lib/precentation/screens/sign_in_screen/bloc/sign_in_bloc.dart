@@ -63,6 +63,7 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
               'name': event.name,
               'location': event.location
             });
+            profileImageLocal = '';
             emit(SignInLoadedState());
           } on FirebaseAuthException catch (e) {
             emit(IncorrectEmailOrPasswordForSignInState(message: e.message!));

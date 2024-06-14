@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipelog/precentation/screens/create_edit_screen/bloc/create_edit_bloc.dart';
+import 'package:recipelog/precentation/screens/home_screen/bloc/home_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/home_screen.dart';
 import 'package:recipelog/precentation/screens/log_in_screen/bloc/log_in_bloc_bloc.dart';
 import 'package:recipelog/precentation/screens/log_in_screen/log_in_screen.dart';
@@ -31,7 +33,9 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => LoginBloc()),
-        BlocProvider(create: (context) => SignInBloc())
+        BlocProvider(create: (context) => SignInBloc()),
+        BlocProvider(create: (context) => HomeBloc()..add(FechDateEvent())),
+        BlocProvider(create: (context) => CreateEditBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
