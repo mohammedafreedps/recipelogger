@@ -24,13 +24,13 @@ Widget userAddedTile({required BuildContext context, required int index}) {
                   width: 10,
                 ),
                 SizedBox(
-                    width: 300,
+                    width: 200,
                     child: Text(
                       'by . ${recipes[index].userEmail.replaceAll('@gmail.com', '')}',
                       style: TextStyles.primaryNormal,
                     )),
                 SizedBox(
-                    width: 300,
+                    width: 200,
                     child: Text(
                       recipes[index].recipeName,
                       style: TextStyles.primaryBold.copyWith(fontSize: 20),

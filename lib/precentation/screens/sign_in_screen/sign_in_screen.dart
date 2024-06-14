@@ -29,27 +29,34 @@ class SignInScreen extends StatelessWidget {
             bottomSnakBar(context: context, message: state.message);
           }
         },
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                addProfile(context: context),
-                fillUpSignIn(
-                    name: nameController,
-                    email: emailController,
-                    password: passwordController,
-                    comformPassword: comformPasswordController,
-                    location: locationController),
-                signInButtons(
-                    context: context,
-                    name: nameController,
-                    email: emailController,
-                    password: passwordController,
-                    comformPassword: comformPasswordController,
-                    location: locationController)
-              ],
+        child: SingleChildScrollView(
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  addProfile(context: context),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  fillUpSignIn(
+                      name: nameController,
+                      email: emailController,
+                      password: passwordController,
+                      comformPassword: comformPasswordController,
+                      location: locationController),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  signInButtons(
+                      context: context,
+                      name: nameController,
+                      email: emailController,
+                      password: passwordController,
+                      comformPassword: comformPasswordController,
+                      location: locationController)
+                ],
+              ),
             ),
           ),
         ),
