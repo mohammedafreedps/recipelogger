@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipelog/precentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
 import 'package:recipelog/precentation/screens/widgets/cus_button.dart';
 import 'package:recipelog/precentation/screens/widgets/loading_circle.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 import 'package:recipelog/precentation/utils/navigators.dart';
 
 Widget signInButtons(

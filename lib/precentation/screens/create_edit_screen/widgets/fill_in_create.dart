@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipelog/precentation/screens/create_edit_screen/bloc/local_variable.dart';
 import 'package:recipelog/precentation/screens/widgets/text_field.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 Widget fillInCreate({required TextEditingController recipeTitleController, String lable = 'Category'}) {
   List<String> categories = [

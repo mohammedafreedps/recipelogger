@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/bloc/home_bloc.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/screens/home_screen/bloc/local_variable.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 import 'package:recipelog/precentation/utils/navigators.dart';
 
 Future alertBox(
@@ -31,6 +32,11 @@ Future alertBox(
                   onPressed: () async {
                     if (isLogout) {
                       await FirebaseAuth.instance.signOut();
+                      currentUser = null;
+                      totalRecipes = 0;
+                      yourTotalRecipes = 0;
+                      categoryPrecent.clear();
+                      categoryWiseTotal.clear();
                       Navigators.popNavigate(context: context);
                     } else {
                       context

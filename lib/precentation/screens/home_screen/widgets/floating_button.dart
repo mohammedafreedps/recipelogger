@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipelog/precentation/screens/create_edit_screen/create_edit_screen.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 import 'package:recipelog/precentation/utils/navigators.dart';
 
 FloatingActionButton floatingButton({required BuildContext context}) {

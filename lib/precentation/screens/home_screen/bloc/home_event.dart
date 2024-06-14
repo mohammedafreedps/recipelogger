@@ -10,4 +10,3 @@ final class RecipeDeleteButtonClickedEvent extends HomeEvent {
   RecipeDeleteButtonClickedEvent({required this.index});
 }
 
-final class LoadDashBoardEvent extends HomeEvent{}

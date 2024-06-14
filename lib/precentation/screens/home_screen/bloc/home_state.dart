@@ -18,4 +18,3 @@ final class HomeErrorState  extends HomeState{
   HomeErrorState({required this.message});
 }
 
-final class DashBoardLoaadedState extends HomeState{}

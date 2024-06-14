@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipelog/precentation/screens/home_screen/bloc/dash_board_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/bloc/home_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/widgets/dash_board.dart';
 import 'package:recipelog/precentation/screens/home_screen/widgets/floating_button.dart';
 import 'package:recipelog/precentation/screens/home_screen/widgets/log_out_button.dart';
 import 'package:recipelog/precentation/screens/home_screen/widgets/user_added_recipes.dart';
 import 'package:recipelog/precentation/screens/widgets/bottom_snack_bar.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,8 +24,8 @@ class HomeScreen extends StatelessWidget {
             if (state is HomeErrorState) {
               bottomSnakBar(context: context, message: state.message);
             }
-            if(state is RecipesLoadedState){
-              context.read<HomeBloc>().add(LoadDashBoardEvent());
+            if(state is RecipesLoadedState) {
+              context.read<DashBoardBloc>().add(LoadDashBoardEvent());
             }
           },
           child: SafeArea(

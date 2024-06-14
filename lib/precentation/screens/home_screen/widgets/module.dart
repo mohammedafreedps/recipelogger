@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 Widget module({required String title, required String value}) {
   return Container(
-    padding: EdgeInsets.all(10),
+    padding: const EdgeInsets.all(10),
     decoration: BoxDecoration(
         border: Border.all(color: AppColor.acsentColor),
         borderRadius: BorderRadius.circular(10)),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipelog/precentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 import 'package:recipelog/precentation/utils/navigators.dart';
 
 Future<void> selectDialog({required BuildContext context}) {

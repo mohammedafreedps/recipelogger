@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 ScaffoldFeatureController bottomSnakBar(
     {required BuildContext context, required String message}) {

@@ -4,7 +4,7 @@ import 'package:recipelog/precentation/screens/log_in_screen/bloc/log_in_bloc_bl
 import 'package:recipelog/precentation/screens/sign_in_screen/sign_in_screen.dart';
 import 'package:recipelog/precentation/screens/widgets/cus_button.dart';
 import 'package:recipelog/precentation/screens/widgets/loading_circle.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 import 'package:recipelog/precentation/utils/navigators.dart';
 
 Widget logInButton({required BuildContext context, required TextEditingController emailController,required TextEditingController passwordController}) {

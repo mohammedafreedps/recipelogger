@@ -8,7 +8,7 @@ import 'package:recipelog/precentation/screens/create_edit_screen/widgets/fill_i
 import 'package:recipelog/precentation/screens/home_screen/bloc/home_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/bloc/local_variable.dart';
 import 'package:recipelog/precentation/screens/widgets/bottom_snack_bar.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 import 'package:recipelog/precentation/utils/navigators.dart';
 
 class CreateEditScreen extends StatefulWidget {

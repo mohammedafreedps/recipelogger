@@ -4,7 +4,7 @@ import 'package:recipelog/precentation/screens/home_screen/bloc/home_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/bloc/local_variable.dart';
 import 'package:recipelog/precentation/screens/home_screen/widgets/user_added_recipes_tile.dart';
 import 'package:recipelog/precentation/screens/widgets/loading_circle.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 Widget userAddedRecipes() {
   return Expanded(child: BlocBuilder<HomeBloc, HomeState>(

@@ -13,8 +13,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeInitial()) {
     on<FechDateEvent>((event, emit) async {
       try {
-        currentUser = FirebaseAuth.instance.currentUser;
-        print(currentUser!.email);
         emit(RecipesLoadingState());
         QuerySnapshot<Map<String, dynamic>> records =
             await FirebaseFirestore.instance.collection('recipes').get();
@@ -45,39 +43,9 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         }
       },
     );
-
-    on<LoadDashBoardEvent>(
-      (event, emit) {
-        categoryPrecent.clear();
-        categoryWiseTotal.clear();
-        totalRecipes = 0;
-        yourTotalRecipes = 0;
-        Set<String> categorySet = {};
-
-        for (int i = 0; i < recipes.length; i++) {
-          categorySet.add(recipes[i].category);
-        }
-
-        categoryPrecent = categorySet.toList();
-
-        for (String category in categoryPrecent) {
-          int count = recipes
-              .where((recipe) =>
-                  recipe.category == category &&
-                  recipe.userEmail == FirebaseAuth.instance.currentUser!.email)
-              .length;
-          int tCount =
-              recipes.where((recipe) => recipe.category == category).length;
-          int countUserAdded = recipes
-              .where((recipe) =>
-                  recipe.category == category &&
-                  recipe.userEmail == FirebaseAuth.instance.currentUser!.email)
-              .length;
-          categoryWiseTotal.add(count);
-          totalRecipes += tCount;
-          yourTotalRecipes += countUserAdded;
-        }
-      },
-    );
   }
+}
+
+void loadDashBoard() {
+  
 }

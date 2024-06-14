@@ -5,7 +5,7 @@ import 'package:recipelog/precentation/screens/sign_in_screen/widgets/add_profil
 import 'package:recipelog/precentation/screens/sign_in_screen/widgets/fill_up_sign_up.dart';
 import 'package:recipelog/precentation/screens/sign_in_screen/widgets/sign_in_butons.dart';
 import 'package:recipelog/precentation/screens/widgets/bottom_snack_bar.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 import 'package:recipelog/precentation/utils/navigators.dart';
 
 class SignInScreen extends StatelessWidget {

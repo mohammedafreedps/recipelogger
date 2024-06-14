@@ -4,7 +4,7 @@ import 'package:recipelog/precentation/screens/log_in_screen/bloc/log_in_bloc_bl
 import 'package:recipelog/precentation/screens/log_in_screen/widgets/fill_up_log_in.dart';
 import 'package:recipelog/precentation/screens/log_in_screen/widgets/log_in_buttons.dart';
 import 'package:recipelog/precentation/screens/widgets/bottom_snack_bar.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 class LogInScreen extends StatelessWidget {
   const LogInScreen({super.key});

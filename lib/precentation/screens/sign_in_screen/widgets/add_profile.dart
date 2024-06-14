@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipelog/precentation/screens/sign_in_screen/bloc/local_variables.dart';
 import 'package:recipelog/precentation/screens/sign_in_screen/bloc/sign_in_bloc.dart';
 import 'package:recipelog/precentation/screens/sign_in_screen/widgets/select_dialog.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 Widget addProfile({required BuildContext context}) {
   return Column(

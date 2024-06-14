@@ -4,7 +4,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recipelog/precentation/screens/create_edit_screen/bloc/create_edit_bloc.dart';
+import 'package:recipelog/precentation/screens/home_screen/bloc/dash_board_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/bloc/home_bloc.dart';
+import 'package:recipelog/precentation/screens/home_screen/bloc/local_variable.dart';
 import 'package:recipelog/precentation/screens/home_screen/home_screen.dart';
 import 'package:recipelog/precentation/screens/log_in_screen/bloc/log_in_bloc_bloc.dart';
 import 'package:recipelog/precentation/screens/log_in_screen/log_in_screen.dart';
@@ -36,12 +38,16 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => SignInBloc()),
         BlocProvider(create: (context) => HomeBloc()..add(FechDateEvent())),
         BlocProvider(create: (context) => CreateEditBloc()),
+        BlocProvider(create: (context) => DashBoardBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: StreamBuilder<User?>(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (context, snapshot) {
+              if(snapshot.data != null){
+                currentUser = snapshot.data;
+              }
               if (snapshot.hasData) {
                 return const HomeScreen();
               } else {

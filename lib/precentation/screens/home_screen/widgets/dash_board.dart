@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:recipelog/precentation/screens/home_screen/bloc/home_bloc.dart';
-import 'package:recipelog/precentation/screens/home_screen/bloc/local_variable.dart';
+import 'package:recipelog/precentation/screens/home_screen/bloc/dash_board_bloc.dart';
 import 'package:recipelog/precentation/screens/home_screen/widgets/module.dart';
+import 'package:recipelog/precentation/screens/home_screen/widgets/refresh_button.dart';
 import 'package:recipelog/precentation/screens/widgets/loading_circle.dart';
-import 'package:recipelog/precentation/style_manager.dart';
+import 'package:recipelog/precentation/utils/style_manager.dart';
 
 Widget dashBoard({required BuildContext context}) {
   return Container(
-    padding: EdgeInsets.all(20),
+    padding: const EdgeInsets.all(20),
     decoration: BoxDecoration(
         color: AppColor.secondaryColor,
         borderRadius: BorderRadius.circular(10)),
     child: Column(
       children: [
+        reFreashButton(context: context),
         Text(
           'Recipe',
           style: TextStyles.primaryBold.copyWith(fontSize: 20),
@@ -21,14 +22,14 @@ Widget dashBoard({required BuildContext context}) {
         const SizedBox(
           height: 30,
         ),
-        BlocBuilder<HomeBloc, HomeState>(
+        BlocBuilder<DashBoardBloc, DashBoardState>(
           builder: (context, state) {
-            if (categoryPrecent.isNotEmpty) {
+            if (state is DashBoardLoaadedState) {
               return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    module(title: 'Total', value: totalRecipes.toString()),
-                    module(title: 'Your', value: yourTotalRecipes.toString())
+                    module(title: 'Total', value: state.totalRecipes.toString()),
+                    module(title: 'Your', value: state.yourTotalRecipes.toString())
                   ]);
             } else {
               return Center(child: loadingCircle(color: AppColor.acsentColor));
@@ -47,9 +48,9 @@ Widget dashBoard({required BuildContext context}) {
         ),
         SizedBox(
           height: 90,
-          child: BlocBuilder<HomeBloc, HomeState>(
+          child: BlocBuilder<DashBoardBloc, DashBoardState>(
             builder: (context, state) {
-              if (categoryPrecent.isNotEmpty) {
+              if (state is DashBoardLoaadedState) {
                 return ListView.separated(
                     separatorBuilder: (context, index) {
                       return const SizedBox(
@@ -57,11 +58,11 @@ Widget dashBoard({required BuildContext context}) {
                       );
                     },
                     scrollDirection: Axis.horizontal,
-                    itemCount: categoryPrecent.length,
+                    itemCount: state.categoryPrecent.length,
                     itemBuilder: (BuildContext context, int index) {
                       return module(
-                          title: categoryPrecent[index],
-                          value: categoryWiseTotal[index].toString());
+                          title: state.categoryPrecent[index],
+                          value: state.categoryWiseTotal[index].toString());
                     });
               } else {
                 return Center(
